@@ -1,22 +1,25 @@
 import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const AccentureFeatures = () => {
+  const { t } = useLanguage();
+  
   const features = [
     {
-      title: "What we do",
-      description: "Comprehensive software engineering services tailored to your business needs",
-      link: "Explore our services",
+      title: t('features.do.title'),
+      description: t('features.do.desc'),
+      link: t('features.do.link'),
     },
     {
-      title: "What we think",
-      description: "Industry insights, thought leadership, and innovative perspectives",
-      link: "Read our insights",
+      title: t('features.think.title'),
+      description: t('features.think.desc'),
+      link: t('features.think.link'),
     },
     {
-      title: "Who we are",
-      description: "Meet the team driving digital transformation across the Netherlands",
-      link: "About TEKFINITY",
+      title: t('features.who.title'),
+      description: t('features.who.desc'),
+      link: t('features.who.link'),
     },
   ];
 

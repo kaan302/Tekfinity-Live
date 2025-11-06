@@ -1,23 +1,26 @@
 import { Facebook, Twitter, Linkedin, Youtube } from "lucide-react";
 import logoWhite from "@/assets/logo-white.png";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const AccentureFooter = () => {
+  const { t } = useLanguage();
+  
   const footerSections = [
     {
-      title: "About TEKFINITY",
-      links: ["About Us", "Leadership", "Careers", "Newsroom", "Investor Relations"],
+      title: t('footer.about'),
+      links: [t('footer.aboutUs'), t('footer.leadership'), t('footer.careers'), t('footer.newsroom'), t('footer.investor')],
     },
     {
-      title: "Services",
-      links: ["Strategy & Consulting", "Technology", "Operations", "Industry Solutions"],
+      title: t('footer.services'),
+      links: [t('footer.strategy'), t('footer.technology'), t('footer.operations'), t('footer.industry')],
     },
     {
-      title: "Insights",
-      links: ["Research & Insights", "Case Studies", "Blogs", "Podcasts"],
+      title: t('footer.insights'),
+      links: [t('footer.research'), t('footer.caseStudies'), t('footer.blogs'), t('footer.podcasts')],
     },
     {
-      title: "Resources",
-      links: ["Clients", "Partners", "Suppliers", "Contact Us"],
+      title: t('footer.resources'),
+      links: [t('footer.clients'), t('footer.partners'), t('footer.suppliers'), t('footer.contactUs')],
     },
   ];
 
@@ -68,15 +71,15 @@ const AccentureFooter = () => {
 
             <div className="flex flex-wrap items-center gap-6 text-sm text-muted-foreground">
               <a href="#" className="hover:text-primary transition-colors">
-                Privacy Statement
+                {t('footer.privacy')}
               </a>
               <a href="#" className="hover:text-primary transition-colors">
-                Terms of Use
+                {t('footer.terms')}
               </a>
               <a href="#" className="hover:text-primary transition-colors">
-                Cookie Policy
+                {t('footer.cookies')}
               </a>
-              <span>© 2025 TEKFINITY</span>
+              <span>{t('footer.rights')}</span>
             </div>
           </div>
         </div>

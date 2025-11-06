@@ -1,42 +1,45 @@
 import { Smartphone, Code2, Cloud, Cpu, Database, Shield } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const ServicesShowcase = () => {
+  const { t } = useLanguage();
+  
   const services = [
     {
       icon: Smartphone,
-      title: "Mobile App Development",
-      description: "Native iOS & Android apps with cutting-edge features and seamless UX",
+      title: t('servicesShowcase.mobile'),
+      description: t('servicesShowcase.mobileDesc'),
       color: "from-blue-500 to-cyan-500",
     },
     {
       icon: Code2,
-      title: "Web Development",
-      description: "Modern, responsive web applications built with latest frameworks",
+      title: t('servicesShowcase.web'),
+      description: t('servicesShowcase.webDesc'),
       color: "from-cyan-500 to-teal-500",
     },
     {
       icon: Cloud,
-      title: "Cloud Solutions",
-      description: "Scalable cloud infrastructure and migration services",
+      title: t('servicesShowcase.cloud'),
+      description: t('servicesShowcase.cloudDesc'),
       color: "from-purple-500 to-pink-500",
     },
     {
       icon: Cpu,
-      title: "AI & Machine Learning",
-      description: "Intelligent solutions powered by advanced AI algorithms",
+      title: t('servicesShowcase.ai'),
+      description: t('servicesShowcase.aiDesc'),
       color: "from-orange-500 to-red-500",
     },
     {
       icon: Database,
-      title: "Data Engineering",
-      description: "Big data solutions and analytics for data-driven decisions",
+      title: t('servicesShowcase.data'),
+      description: t('servicesShowcase.dataDesc'),
       color: "from-green-500 to-emerald-500",
     },
     {
       icon: Shield,
-      title: "Cybersecurity",
-      description: "Enterprise-grade security solutions to protect your assets",
+      title: t('servicesShowcase.security'),
+      description: t('servicesShowcase.securityDesc'),
       color: "from-indigo-500 to-purple-500",
     },
   ];
@@ -47,15 +50,14 @@ const ServicesShowcase = () => {
         <div className="text-center mb-16">
           <div className="inline-block mb-4">
             <span className="text-accent font-semibold text-sm tracking-wider uppercase">
-              Our Expertise
+              {t('servicesShowcase.tag')}
             </span>
           </div>
           <h2 className="text-4xl md:text-5xl font-bold mb-6">
-            Comprehensive Software Solutions
+            {t('servicesShowcase.title')}
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            From concept to deployment, we deliver end-to-end software engineering services
-            that drive innovation and business growth
+            {t('servicesShowcase.subtitle')}
           </p>
         </div>
 

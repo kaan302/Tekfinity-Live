@@ -1,7 +1,10 @@
 import { ArrowRight, Mail } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const CTASection = () => {
+  const { t } = useLanguage();
+  
   return (
     <section className="py-32 relative overflow-hidden">
       {/* Animated Background */}
@@ -15,24 +18,23 @@ const CTASection = () => {
         <div className="max-w-4xl mx-auto text-center space-y-8">
           <div className="inline-block mb-4">
             <span className="text-accent font-semibold text-sm tracking-wider uppercase">
-              Ready to Get Started?
+              {t('cta.tag')}
             </span>
           </div>
           <h2 className="text-5xl md:text-6xl font-bold leading-tight">
-            Let's Build Something
+            {t('cta.title')}
             <br />
-            <span className="text-gradient">Extraordinary Together</span>
+            <span className="text-gradient">{t('cta.titleHighlight')}</span>
           </h2>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            Transform your vision into reality with our expert team. Schedule a free
-            consultation to discuss your project today.
+            {t('cta.subtitle')}
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center pt-8">
             <Button
               size="lg"
               className="group bg-primary hover:bg-primary/90 text-lg px-8 py-6 glow-effect"
             >
-              Start Your Project
+              {t('cta.start')}
               <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
             </Button>
             <Button
@@ -41,7 +43,7 @@ const CTASection = () => {
               className="text-lg px-8 py-6 border-2 hover:bg-card"
             >
               <Mail className="mr-2 h-5 w-5" />
-              Contact Sales
+              {t('cta.contact')}
             </Button>
           </div>
         </div>

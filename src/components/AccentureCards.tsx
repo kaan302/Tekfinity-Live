@@ -4,34 +4,37 @@ import card1 from "@/assets/card-1.jpg";
 import card2 from "@/assets/card-2.jpg";
 import card3 from "@/assets/card-3.jpg";
 import card4 from "@/assets/card-4.jpg";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const AccentureCards = () => {
+  const { t } = useLanguage();
+  
   const cards = [
     {
-      type: "RESEARCH REPORT",
-      title: "Digital Transformation: From managing complexity to accelerating growth",
-      description: "Digital transformation isn't just a technology play—it's a game-changer for business competitiveness. Discover how organizations are moving fast to secure their advantage.",
+      type: t('cards.report'),
+      title: t('cards.card1.title'),
+      description: t('cards.card1.desc'),
       image: card1,
       gradient: "from-orange-200/20 to-pink-200/20",
     },
     {
-      type: "RESEARCH REPORT",
-      title: "Modern Development 2025: The future of agile software engineering",
-      description: "Development teams, facing complexity and rapid change, are seeking efficiency combined with innovation, scalability and connection.",
+      type: t('cards.report'),
+      title: t('cards.card2.title'),
+      description: t('cards.card2.desc'),
       image: card2,
       gradient: "from-blue-200/20 to-purple-200/20",
     },
     {
-      type: "CASE STUDY",
-      title: "Enterprise Solutions: Building platforms for tomorrow",
-      description: "How leading companies are transforming their legacy systems into modern, scalable platforms that drive business value.",
+      type: t('cards.case'),
+      title: t('cards.card3.title'),
+      description: t('cards.card3.desc'),
       image: card3,
       gradient: "from-purple-200/20 to-indigo-200/20",
     },
     {
-      type: "RESEARCH REPORT",
-      title: "Innovation Accelerated: Human-AI collaboration in software",
-      description: "Exploring the intersection of human creativity and AI capabilities to revolutionize how we build software solutions.",
+      type: t('cards.report'),
+      title: t('cards.card4.title'),
+      description: t('cards.card4.desc'),
       image: card4,
       gradient: "from-pink-200/20 to-purple-200/20",
     },

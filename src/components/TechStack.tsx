@@ -1,6 +1,9 @@
 import { Badge } from "@/components/ui/badge";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const TechStack = () => {
+  const { t } = useLanguage();
+  
   const technologies = {
     "Frontend": ["React", "Next.js", "Vue.js", "TypeScript", "Tailwind CSS"],
     "Backend": ["Node.js", "Python", "Java", "Go", ".NET Core"],
@@ -18,15 +21,14 @@ const TechStack = () => {
         <div className="text-center mb-16">
           <div className="inline-block mb-4">
             <span className="text-accent font-semibold text-sm tracking-wider uppercase">
-              Technology Stack
+              {t('tech.tag')}
             </span>
           </div>
           <h2 className="text-4xl md:text-5xl font-bold mb-6">
-            Built with Industry-Leading Technologies
+            {t('tech.title')}
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            We leverage the latest and most reliable technologies to build robust,
-            scalable solutions
+            {t('tech.subtitle')}
           </p>
         </div>
 

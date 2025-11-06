@@ -1,30 +1,33 @@
 import { TrendingUp, Users, Award, Globe2 } from "lucide-react";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const StatsSection = () => {
+  const { t } = useLanguage();
+  
   const stats = [
     {
       icon: Users,
-      number: "500+",
-      label: "Clients Served",
-      description: "Across the Netherlands",
+      number: t('stats.clients.number'),
+      label: t('stats.clients.label'),
+      description: t('stats.clients.desc'),
     },
     {
       icon: Award,
-      number: "98%",
-      label: "Client Satisfaction",
-      description: "Industry-leading retention",
+      number: t('stats.satisfaction.number'),
+      label: t('stats.satisfaction.label'),
+      description: t('stats.satisfaction.desc'),
     },
     {
       icon: TrendingUp,
-      number: "250+",
-      label: "Projects Delivered",
-      description: "On time and on budget",
+      number: t('stats.projects.number'),
+      label: t('stats.projects.label'),
+      description: t('stats.projects.desc'),
     },
     {
       icon: Globe2,
-      number: "15+",
-      label: "Years Experience",
-      description: "In software engineering",
+      number: t('stats.experience.number'),
+      label: t('stats.experience.label'),
+      description: t('stats.experience.desc'),
     },
   ];
 
@@ -36,10 +39,10 @@ const StatsSection = () => {
       <div className="container-custom relative z-10">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold mb-4">
-            Trusted by Leading Organizations
+            {t('stats.title')}
           </h2>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            Our track record speaks for itself
+            {t('stats.subtitle')}
           </p>
         </div>
 

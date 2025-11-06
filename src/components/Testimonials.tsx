@@ -1,24 +1,27 @@
 import { Star } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const Testimonials = () => {
+  const { t } = useLanguage();
+  
   const testimonials = [
     {
       name: "Sarah van der Berg",
       role: "CTO, TechCorp NL",
-      content: "TEKFINITY transformed our legacy systems into a modern, scalable platform. Their expertise and dedication are unmatched.",
+      content: t('testimonials.test1.content'),
       rating: 5,
     },
     {
       name: "Mark Jansen",
       role: "CEO, StartupHub",
-      content: "Working with TEKFINITY was a game-changer. They delivered our mobile app ahead of schedule with exceptional quality.",
+      content: t('testimonials.test2.content'),
       rating: 5,
     },
     {
       name: "Lisa de Vries",
       role: "Product Manager, FinanceFlow",
-      content: "The team's technical knowledge and collaborative approach made our complex project a success. Highly recommended!",
+      content: t('testimonials.test3.content'),
       rating: 5,
     },
   ];
@@ -29,14 +32,14 @@ const Testimonials = () => {
         <div className="text-center mb-16">
           <div className="inline-block mb-4">
             <span className="text-accent font-semibold text-sm tracking-wider uppercase">
-              Client Testimonials
+              {t('testimonials.tag')}
             </span>
           </div>
           <h2 className="text-4xl md:text-5xl font-bold mb-6">
-            What Our Clients Say
+            {t('testimonials.title')}
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            Don't just take our word for it - hear from the companies we've helped transform
+            {t('testimonials.subtitle')}
           </p>
         </div>
 

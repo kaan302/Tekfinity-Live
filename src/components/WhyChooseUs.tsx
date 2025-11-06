@@ -1,28 +1,31 @@
 import { Zap, Target, Users2, Sparkles } from "lucide-react";
 import aiCollabImage from "@/assets/ai-collab.jpg";
 import cloudInfraImage from "@/assets/cloud-infra.jpg";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const WhyChooseUs = () => {
+  const { t } = useLanguage();
+  
   const reasons = [
     {
       icon: Zap,
-      title: "Lightning Fast Delivery",
-      description: "Agile methodologies ensure rapid development without compromising quality",
+      title: t('why.fast'),
+      description: t('why.fastDesc'),
     },
     {
       icon: Target,
-      title: "Business-Focused Solutions",
-      description: "We align technology with your business goals for maximum ROI",
+      title: t('why.business'),
+      description: t('why.businessDesc'),
     },
     {
       icon: Users2,
-      title: "Dedicated Support",
-      description: "24/7 support and maintenance to keep your systems running smoothly",
+      title: t('why.dedicated'),
+      description: t('why.dedicatedDesc'),
     },
     {
       icon: Sparkles,
-      title: "Innovation First",
-      description: "Cutting-edge technology and creative problem-solving",
+      title: t('why.innovation'),
+      description: t('why.innovationDesc'),
     },
   ];
 
@@ -34,14 +37,13 @@ const WhyChooseUs = () => {
           <div className="space-y-8">
             <div>
               <span className="text-accent font-semibold text-sm tracking-wider uppercase">
-                Why Choose TEKFINITY
+                {t('why.tag')}
               </span>
               <h2 className="text-4xl md:text-5xl font-bold mt-4 mb-6">
-                Excellence in Every Line of Code
+                {t('why.title')}
               </h2>
               <p className="text-xl text-muted-foreground leading-relaxed">
-                We don't just write code—we craft solutions that drive business success.
-                Our commitment to excellence, innovation, and client satisfaction sets us apart.
+                {t('why.subtitle')}
               </p>
             </div>
 
@@ -77,13 +79,13 @@ const WhyChooseUs = () => {
                 </div>
                 <div className="bg-gradient-to-br from-primary to-accent p-8 rounded-2xl text-center">
                   <div className="text-4xl font-bold mb-2">100%</div>
-                  <div className="text-sm">Success Rate</div>
+                  <div className="text-sm">{t('why.successRate')}</div>
                 </div>
               </div>
               <div className="space-y-6 pt-12">
                 <div className="bg-card border border-border p-6 rounded-2xl">
                   <div className="text-3xl font-bold text-gradient mb-2">15+</div>
-                  <div className="text-sm text-muted-foreground">Years in Business</div>
+                  <div className="text-sm text-muted-foreground">{t('why.yearsInBusiness')}</div>
                 </div>
                 <div className="aspect-square rounded-2xl overflow-hidden hover-lift">
                   <img

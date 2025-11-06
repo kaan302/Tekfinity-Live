@@ -8,53 +8,60 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    --background: 0 0% 7%;
+    --background: 220 25% 8%;
     --foreground: 0 0% 98%;
 
-    --card: 0 0% 12%;
+    --card: 220 20% 12%;
     --card-foreground: 0 0% 98%;
 
-    --popover: 0 0% 12%;
+    --popover: 220 20% 12%;
     --popover-foreground: 0 0% 98%;
 
-    --primary: 205 88% 36%;
+    --primary: 205 88% 45%;
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 0 0% 15%;
+    --secondary: 220 15% 18%;
     --secondary-foreground: 0 0% 98%;
 
-    --muted: 0 0% 20%;
-    --muted-foreground: 0 0% 65%;
+    --muted: 220 15% 25%;
+    --muted-foreground: 0 0% 70%;
 
-    --accent: 205 88% 36%;
+    --accent: 30 90% 55%;
     --accent-foreground: 0 0% 100%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 0 0% 20%;
-    --input: 0 0% 20%;
-    --ring: 205 88% 36%;
+    --border: 220 15% 20%;
+    --input: 220 15% 20%;
+    --ring: 205 88% 45%;
 
-    --radius: 0rem;
+    --radius: 0.5rem;
 
     /* Brand colors */
-    --brand-blue: 205 88% 36%;
-    --brand-dark: 0 0% 7%;
-    --brand-light: 0 0% 15%;
+    --brand-blue: 205 88% 45%;
+    --brand-cyan: 190 85% 50%;
+    --brand-orange: 30 90% 55%;
+    --brand-dark: 220 25% 8%;
+    --brand-light: 220 15% 18%;
 
     /* Gradients */
-    --gradient-primary: linear-gradient(135deg, hsl(205 88% 36%), hsl(205 88% 46%));
+    --gradient-primary: linear-gradient(135deg, hsl(205 88% 45%), hsl(190 85% 50%));
+    --gradient-accent: linear-gradient(135deg, hsl(30 90% 55%), hsl(35 90% 60%));
+    --gradient-mesh: radial-gradient(at 40% 20%, hsl(205 88% 45% / 0.3) 0px, transparent 50%),
+                     radial-gradient(at 80% 0%, hsl(190 85% 50% / 0.2) 0px, transparent 50%),
+                     radial-gradient(at 0% 50%, hsl(30 90% 55% / 0.2) 0px, transparent 50%);
 
     /* Shadows */
-    --shadow-card: 0 4px 20px hsl(0 0% 0% / 0.3);
+    --shadow-card: 0 8px 30px hsl(0 0% 0% / 0.4);
+    --shadow-glow: 0 0 40px hsl(205 88% 45% / 0.3);
 
     /* Animations */
     --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   }
 
   .dark {
-    --background: 0 0% 7%;
+    --background: 220 25% 8%;
     --foreground: 0 0% 98%;
 
     --card: 0 0% 15%;
@@ -105,8 +112,13 @@ All colors MUST be HSL.
     background-image: var(--gradient-primary);
   }
 
+  .text-gradient-accent {
+    @apply bg-clip-text text-transparent;
+    background-image: var(--gradient-accent);
+  }
+
   .hover-lift {
-    @apply transition-all duration-300 hover:scale-105;
+    @apply transition-all duration-300 hover:scale-105 hover:shadow-2xl;
   }
 
   .section-padding {
@@ -115,5 +127,13 @@ All colors MUST be HSL.
 
   .container-custom {
     @apply container mx-auto px-4 md:px-6 lg:px-8;
+  }
+
+  .gradient-mesh {
+    background-image: var(--gradient-mesh);
+  }
+
+  .glow-effect {
+    box-shadow: var(--shadow-glow);
   }
 }

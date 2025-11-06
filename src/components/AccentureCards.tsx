@@ -44,16 +44,16 @@ const AccentureCards = () => {
           {cards.map((card, index) => (
             <Card
               key={index}
-              className="group overflow-hidden border-border bg-card hover:shadow-xl transition-all duration-300 cursor-pointer"
+              className="group overflow-hidden border-border bg-card hover-lift cursor-pointer"
             >
               <div className="relative h-64 overflow-hidden">
-                <div className={`absolute inset-0 bg-gradient-to-br ${card.gradient}`} />
+                <div className={`absolute inset-0 bg-gradient-to-br ${card.gradient} opacity-80`} />
                 <img
                   src={card.image}
                   alt={card.title}
-                  className="w-full h-full object-cover mix-blend-overlay opacity-80 group-hover:scale-105 transition-transform duration-500"
+                  className="w-full h-full object-cover mix-blend-overlay opacity-60 group-hover:scale-110 transition-transform duration-500"
                 />
-                <Badge className="absolute top-4 left-4 bg-background/80 text-foreground border-none">
+                <Badge className="absolute top-4 left-4 bg-background/90 backdrop-blur-sm text-foreground border-none">
                   {card.type}
                 </Badge>
               </div>

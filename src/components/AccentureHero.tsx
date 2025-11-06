@@ -3,21 +3,23 @@ import { Button } from "@/components/ui/button";
 
 const AccentureHero = () => {
   return (
-    <section className="relative min-h-screen flex items-center bg-background pt-16">
-      {/* Background Pattern */}
-      <div className="absolute inset-0 opacity-10">
-        <div className="absolute top-1/4 right-1/4 w-96 h-96 bg-primary rounded-full blur-3xl" />
+    <section className="relative min-h-screen flex items-center bg-background pt-16 overflow-hidden">
+      {/* Animated Gradient Mesh Background */}
+      <div className="absolute inset-0">
+        <div className="absolute inset-0 gradient-mesh" />
+        <div className="absolute top-1/4 right-1/4 w-[500px] h-[500px] bg-primary/30 rounded-full blur-3xl animate-pulse" />
+        <div className="absolute bottom-1/4 left-1/4 w-[400px] h-[400px] bg-accent/20 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }} />
       </div>
 
       <div className="container mx-auto px-4 lg:px-8 py-20 relative z-10">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Left Content */}
-          <div className="space-y-8">
+          <div className="space-y-8 animate-fade-in">
             <h1 className="text-6xl md:text-7xl lg:text-8xl font-bold leading-tight">
               TOGETHER WE{" "}
               <span className="relative inline-block">
                 REIN
-                <span className="text-primary">V</span>
+                <span className="text-gradient-accent">V</span>
                 ENTED
               </span>
             </h1>
@@ -31,8 +33,8 @@ const AccentureHero = () => {
           </div>
 
           {/* Right Content Card */}
-          <div className="bg-card border border-border p-8 lg:p-12">
-            <div className="w-12 h-1 bg-primary mb-6" />
+          <div className="bg-card/80 backdrop-blur-sm border border-border p-8 lg:p-12 rounded-2xl hover-lift animate-slide-in-right">
+            <div className="w-12 h-1 bg-gradient-to-r from-primary to-accent mb-6" />
             <h2 className="text-3xl font-bold mb-6">
               Scaling Software Solutions
             </h2>
@@ -40,7 +42,7 @@ const AccentureHero = () => {
               We help clients prioritize business strategy, technology readiness
               and organizational readiness to get to value faster.
             </p>
-            <Button className="group bg-primary hover:bg-primary/90 text-primary-foreground">
+            <Button className="group bg-gradient-to-r from-primary to-accent hover:opacity-90 text-primary-foreground glow-effect">
               See what we do
               <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
             </Button>

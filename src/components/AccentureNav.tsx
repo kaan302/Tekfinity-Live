@@ -2,15 +2,17 @@ import { useState } from "react";
 import { ChevronDown, Search, Globe, Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import logoWhite from "@/assets/logo-white.png";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const AccentureNav = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const { language, setLanguage, t } = useLanguage();
 
   const navItems = [
-    { name: "What we do", hasDropdown: true },
-    { name: "What we think", hasDropdown: false },
-    { name: "Who we are", hasDropdown: true },
-    { name: "Careers", hasDropdown: true },
+    { name: t('nav.services'), hasDropdown: true },
+    { name: t('nav.insights'), hasDropdown: false },
+    { name: t('nav.about'), hasDropdown: true },
+    { name: t('nav.careers'), hasDropdown: true },
   ];
 
   return (
@@ -40,9 +42,12 @@ const AccentureNav = () => {
             <button className="text-foreground hover:text-primary transition-colors">
               <Search size={20} />
             </button>
-            <button className="flex items-center gap-2 text-sm text-foreground hover:text-primary transition-colors">
+            <button 
+              onClick={() => setLanguage(language === 'nl' ? 'en' : 'nl')}
+              className="flex items-center gap-2 text-sm text-foreground hover:text-primary transition-colors"
+            >
               <Globe size={20} />
-              <span className="hidden md:inline">Netherlands</span>
+              <span className="hidden md:inline">{language === 'nl' ? 'NL' : 'EN'} | {t('nav.country')}</span>
               <ChevronDown size={16} className="hidden md:inline" />
             </button>
             <button

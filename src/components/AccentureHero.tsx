@@ -1,7 +1,10 @@
-import { ArrowRight, Pause } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const AccentureHero = () => {
+  const { t } = useLanguage();
+  
   return (
     <section className="relative min-h-screen flex items-center bg-background pt-16 overflow-hidden">
       {/* Animated Gradient Mesh Background */}
@@ -16,34 +19,24 @@ const AccentureHero = () => {
           {/* Left Content */}
           <div className="space-y-8 animate-fade-in">
             <h1 className="text-6xl md:text-7xl lg:text-8xl font-bold leading-tight">
-              TOGETHER WE{" "}
+              {t('hero.title')}{" "}
               <span className="relative inline-block">
-                REIN
-                <span className="text-gradient-accent">V</span>
-                ENTED
+                <span className="text-gradient-accent">{t('hero.titleHighlight')}</span>
               </span>
             </h1>
-            <Button
-              variant="ghost"
-              size="sm"
-              className="flex items-center gap-2 text-foreground hover:text-primary"
-            >
-              <Pause size={20} />
-            </Button>
           </div>
 
           {/* Right Content Card */}
           <div className="bg-card/80 backdrop-blur-sm border border-border p-8 lg:p-12 rounded-2xl hover-lift animate-slide-in-right">
             <div className="w-12 h-1 bg-gradient-to-r from-primary to-accent mb-6" />
             <h2 className="text-3xl font-bold mb-6">
-              Scaling Software Solutions
+              {t('hero.subtitle')}
             </h2>
             <p className="text-muted-foreground text-lg mb-8 leading-relaxed">
-              We help clients prioritize business strategy, technology readiness
-              and organizational readiness to get to value faster.
+              {t('hero.description')}
             </p>
             <Button className="group bg-gradient-to-r from-primary to-accent hover:opacity-90 text-primary-foreground glow-effect">
-              See what we do
+              {t('hero.cta')}
               <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
             </Button>
           </div>

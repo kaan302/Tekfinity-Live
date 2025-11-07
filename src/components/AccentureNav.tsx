@@ -1,6 +1,12 @@
 import { useState } from "react";
 import { ChevronDown, Search, Globe, Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
 import logoWhite from "@/assets/logo-white.png";
 import { useLanguage } from "@/contexts/LanguageContext";
 
@@ -42,14 +48,29 @@ const AccentureNav = () => {
             <button className="text-foreground hover:text-primary transition-colors">
               <Search size={20} />
             </button>
-            <button 
-              onClick={() => setLanguage(language === 'nl' ? 'en' : 'nl')}
-              className="flex items-center gap-2 text-sm text-foreground hover:text-primary transition-colors"
-            >
-              <Globe size={20} />
-              <span className="hidden md:inline">{language === 'nl' ? 'NL' : 'EN'} | {t('nav.country')}</span>
-              <ChevronDown size={16} className="hidden md:inline" />
-            </button>
+            <DropdownMenu>
+              <DropdownMenuTrigger asChild>
+                <button className="flex items-center gap-2 text-sm text-foreground hover:text-primary transition-colors">
+                  <Globe size={20} />
+                  <span className="hidden md:inline">{language === 'nl' ? 'NL' : 'EN'} | {t('nav.country')}</span>
+                  <ChevronDown size={16} className="hidden md:inline" />
+                </button>
+              </DropdownMenuTrigger>
+              <DropdownMenuContent align="end" className="bg-background border-border">
+                <DropdownMenuItem 
+                  onClick={() => setLanguage('nl')}
+                  className={`cursor-pointer ${language === 'nl' ? 'bg-accent' : ''}`}
+                >
+                  Nederlands (NL)
+                </DropdownMenuItem>
+                <DropdownMenuItem 
+                  onClick={() => setLanguage('en')}
+                  className={`cursor-pointer ${language === 'en' ? 'bg-accent' : ''}`}
+                >
+                  English (EN)
+                </DropdownMenuItem>
+              </DropdownMenuContent>
+            </DropdownMenu>
             <button
               className="lg:hidden text-foreground"
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}

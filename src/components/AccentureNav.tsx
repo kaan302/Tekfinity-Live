@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link, useLocation } from "react-router-dom";
 import { ChevronDown, Search, Globe, Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import {
@@ -13,12 +14,13 @@ import { useLanguage } from "@/contexts/LanguageContext";
 const AccentureNav = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const { language, setLanguage, t } = useLanguage();
+  const location = useLocation();
 
   const navItems = [
-    { name: t('nav.services'), hasDropdown: true },
-    { name: t('nav.insights'), hasDropdown: false },
-    { name: t('nav.about'), hasDropdown: true },
-    { name: t('nav.careers'), hasDropdown: true },
+    { name: t('nav.services'), hasDropdown: false, path: '/services' },
+    { name: t('nav.insights'), hasDropdown: false, path: '/insights' },
+    { name: t('nav.about'), hasDropdown: false, path: '/about' },
+    { name: t('nav.careers'), hasDropdown: false, path: '/careers' },
   ];
 
   return (
@@ -33,13 +35,18 @@ const AccentureNav = () => {
           {/* Desktop Navigation */}
           <div className="hidden lg:flex items-center space-x-8">
             {navItems.map((item) => (
-              <button
+              <Link
                 key={item.name}
-                className="flex items-center gap-1 text-sm text-foreground hover:text-primary transition-colors"
+                to={item.path}
+                className={`flex items-center gap-1 text-sm transition-colors ${
+                  location.pathname === item.path
+                    ? 'text-primary font-semibold'
+                    : 'text-foreground hover:text-primary'
+                }`}
               >
                 {item.name}
                 {item.hasDropdown && <ChevronDown size={16} />}
-              </button>
+              </Link>
             ))}
           </div>
 
@@ -86,13 +93,18 @@ const AccentureNav = () => {
         <div className="lg:hidden border-t border-border bg-background">
           <div className="container mx-auto px-4 py-4 space-y-4">
             {navItems.map((item) => (
-              <a
+              <Link
                 key={item.name}
-                href="#"
-                className="block py-2 text-foreground hover:text-primary transition-colors"
+                to={item.path}
+                onClick={() => setIsMobileMenuOpen(false)}
+                className={`block py-2 transition-colors ${
+                  location.pathname === item.path
+                    ? 'text-primary font-semibold'
+                    : 'text-foreground hover:text-primary'
+                }`}
               >
                 {item.name}
-              </a>
+              </Link>
             ))}
           </div>
         </div>

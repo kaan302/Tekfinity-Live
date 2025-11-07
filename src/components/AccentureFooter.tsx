@@ -1,4 +1,4 @@
-import { Facebook, Twitter, Linkedin, Youtube } from "lucide-react";
+
 import logoWhite from "@/assets/logo-white.png";
 import { useLanguage } from "@/contexts/LanguageContext";
 
@@ -51,22 +51,8 @@ const AccentureFooter = () => {
         {/* Social Media & Bottom Links */}
         <div className="border-t border-border pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center gap-6">
-            <div className="flex items-center gap-6">
+            <div className="flex items-center">
               <img src={logoWhite} alt="TEKFINITY" className="h-6" />
-              <div className="flex items-center gap-4">
-                <a href="#" className="text-muted-foreground hover:text-primary transition-colors">
-                  <Facebook size={20} />
-                </a>
-                <a href="#" className="text-muted-foreground hover:text-primary transition-colors">
-                  <Twitter size={20} />
-                </a>
-                <a href="#" className="text-muted-foreground hover:text-primary transition-colors">
-                  <Linkedin size={20} />
-                </a>
-                <a href="#" className="text-muted-foreground hover:text-primary transition-colors">
-                  <Youtube size={20} />
-                </a>
-              </div>
             </div>
 
             <div className="flex flex-wrap items-center gap-6 text-sm text-muted-foreground">

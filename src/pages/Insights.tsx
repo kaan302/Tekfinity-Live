@@ -3,30 +3,36 @@ import AccentureFooter from "@/components/AccentureFooter";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { ArrowRight, Clock } from "lucide-react";
 import insightsFeaturedImage from "@/assets/insights-featured.jpg";
+import { useNavigate } from "react-router-dom";
 
 const Insights = () => {
   const { t } = useLanguage();
+  const navigate = useNavigate();
 
   const insights = [
     {
+      id: 'ai-transformation',
       category: t('cards.report'),
       title: t('cards.card1.title'),
       description: t('cards.card1.desc'),
       readTime: '8 min',
     },
     {
+      id: 'cloud-migration',
       category: t('cards.case'),
       title: t('cards.card2.title'),
       description: t('cards.card2.desc'),
       readTime: '12 min',
     },
     {
+      id: 'digital-strategy',
       category: t('cards.report'),
       title: t('cards.card3.title'),
       description: t('cards.card3.desc'),
       readTime: '10 min',
     },
     {
+      id: 'future-software',
       category: t('cards.case'),
       title: t('cards.card4.title'),
       description: t('cards.card4.desc'),
@@ -72,7 +78,10 @@ const Insights = () => {
                 <p className="text-muted-foreground mb-6">
                   {t('insights.featured.desc')}
                 </p>
-                <button className="flex items-center gap-2 text-primary font-semibold hover:gap-4 transition-all">
+                <button 
+                  onClick={() => navigate('/insights/future-software')}
+                  className="flex items-center gap-2 text-primary font-semibold hover:gap-4 transition-all"
+                >
                   {t('insights.readMore')} <ArrowRight className="w-5 h-5" />
                 </button>
               </div>
@@ -89,6 +98,7 @@ const Insights = () => {
             {insights.map((insight, index) => (
               <div
                 key={index}
+                onClick={() => navigate(`/insights/${insight.id}`)}
                 className="bg-card border border-border rounded-lg p-8 hover-lift group cursor-pointer"
               >
                 <span className="text-xs text-primary font-semibold">{insight.category}</span>

@@ -210,6 +210,12 @@ const translations: Record<Language, Record<string, string>> = {
     'careers.cta.title': 'Zie je jezelf niet in deze rollen?',
     'careers.cta.desc': 'We zijn altijd op zoek naar getalenteerde mensen. Stuur ons je CV!',
     'careers.cta.button': 'Stuur Open Sollicitatie',
+    
+    // Search
+    'search.title': 'Zoeken',
+    'search.placeholder': 'Zoek naar diensten, inzichten, vacatures...',
+    'search.empty': 'Begin met typen om te zoeken',
+    'search.noResults': 'Geen resultaten gevonden',
   },
   en: {
     // Navigation
@@ -412,6 +418,12 @@ const translations: Record<Language, Record<string, string>> = {
     'careers.cta.title': "Don't see yourself in these roles?",
     'careers.cta.desc': "We're always looking for talented people. Send us your CV!",
     'careers.cta.button': 'Send Open Application',
+    
+    // Search
+    'search.title': 'Search',
+    'search.placeholder': 'Search for services, insights, jobs...',
+    'search.empty': 'Start typing to search',
+    'search.noResults': 'No results found',
   },
 };
 

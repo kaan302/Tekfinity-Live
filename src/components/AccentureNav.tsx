@@ -10,9 +10,11 @@ import {
 } from "@/components/ui/dropdown-menu";
 import logoWhite from "@/assets/logo-white.png";
 import { useLanguage } from "@/contexts/LanguageContext";
+import SearchDialog from "./SearchDialog";
 
 const AccentureNav = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isSearchOpen, setIsSearchOpen] = useState(false);
   const { language, setLanguage, t } = useLanguage();
   const location = useLocation();
 
@@ -52,7 +54,11 @@ const AccentureNav = () => {
 
           {/* Right Side Icons */}
           <div className="flex items-center gap-4">
-            <button className="text-foreground hover:text-primary transition-colors">
+            <button 
+              onClick={() => setIsSearchOpen(true)}
+              className="text-foreground hover:text-primary transition-colors"
+              aria-label="Search"
+            >
               <Search size={20} />
             </button>
             <DropdownMenu>
@@ -109,6 +115,8 @@ const AccentureNav = () => {
           </div>
         </div>
       )}
+      
+      <SearchDialog open={isSearchOpen} onOpenChange={setIsSearchOpen} />
     </nav>
   );
 };

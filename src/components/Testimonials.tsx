@@ -7,20 +7,20 @@ const Testimonials = () => {
   
   const testimonials = [
     {
-      name: "Sarah van der Berg",
-      role: "CTO, TechCorp NL",
+      name: "Raihan Saboerali",
+      role: "Cartura",
       content: t('testimonials.test1.content'),
       rating: 5,
     },
     {
-      name: "Mark Jansen",
-      role: "CEO, StartupHub",
+      name: "Zekeriya Tezcan",
+      role: "Moonstar Studios",
       content: t('testimonials.test2.content'),
       rating: 5,
     },
     {
-      name: "Lisa de Vries",
-      role: "Product Manager, FinanceFlow",
+      name: "Fawaz Alayesh",
+      role: "Devcaffe",
       content: t('testimonials.test3.content'),
       rating: 5,
     },

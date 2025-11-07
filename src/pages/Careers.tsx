@@ -118,8 +118,37 @@ const Careers = () => {
         </div>
       </section>
 
-      {/* CTA Section */}
+      {/* Culture Section */}
       <section className="section-padding">
+        <div className="container-custom">
+          <div className="text-center mb-12">
+            <h2 className="text-4xl font-bold mb-4">{t('careers.culture.title')}</h2>
+            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+              {t('careers.culture.subtitle')}
+            </p>
+          </div>
+          <div className="grid md:grid-cols-3 gap-8">
+            <div className="bg-card border border-border rounded-lg p-8 text-center hover-lift">
+              <div className="text-4xl mb-4">🚀</div>
+              <h3 className="text-xl font-bold mb-3">{t('careers.culture.innovation.title')}</h3>
+              <p className="text-muted-foreground">{t('careers.culture.innovation.desc')}</p>
+            </div>
+            <div className="bg-card border border-border rounded-lg p-8 text-center hover-lift">
+              <div className="text-4xl mb-4">🤝</div>
+              <h3 className="text-xl font-bold mb-3">{t('careers.culture.collaboration.title')}</h3>
+              <p className="text-muted-foreground">{t('careers.culture.collaboration.desc')}</p>
+            </div>
+            <div className="bg-card border border-border rounded-lg p-8 text-center hover-lift">
+              <div className="text-4xl mb-4">🌱</div>
+              <h3 className="text-xl font-bold mb-3">{t('careers.culture.growth.title')}</h3>
+              <p className="text-muted-foreground">{t('careers.culture.growth.desc')}</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* CTA Section */}
+      <section className="section-padding bg-card">
         <div className="container-custom text-center">
           <h2 className="text-4xl md:text-5xl font-bold mb-6">
             {t('careers.cta.title')}

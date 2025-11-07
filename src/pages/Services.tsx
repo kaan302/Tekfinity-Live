@@ -85,6 +85,48 @@ const Services = () => {
         </div>
       </section>
 
+      {/* Process Section */}
+      <section className="section-padding bg-secondary/10">
+        <div className="container-custom">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl font-bold mb-4">{t('services.process.title')}</h2>
+            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+              {t('services.process.subtitle')}
+            </p>
+          </div>
+          <div className="grid md:grid-cols-4 gap-8">
+            <div className="text-center">
+              <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-6">
+                <span className="text-3xl font-bold text-primary">1</span>
+              </div>
+              <h3 className="text-xl font-bold mb-3">{t('services.process.step1.title')}</h3>
+              <p className="text-muted-foreground">{t('services.process.step1.desc')}</p>
+            </div>
+            <div className="text-center">
+              <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-6">
+                <span className="text-3xl font-bold text-primary">2</span>
+              </div>
+              <h3 className="text-xl font-bold mb-3">{t('services.process.step2.title')}</h3>
+              <p className="text-muted-foreground">{t('services.process.step2.desc')}</p>
+            </div>
+            <div className="text-center">
+              <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-6">
+                <span className="text-3xl font-bold text-primary">3</span>
+              </div>
+              <h3 className="text-xl font-bold mb-3">{t('services.process.step3.title')}</h3>
+              <p className="text-muted-foreground">{t('services.process.step3.desc')}</p>
+            </div>
+            <div className="text-center">
+              <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-6">
+                <span className="text-3xl font-bold text-primary">4</span>
+              </div>
+              <h3 className="text-xl font-bold mb-3">{t('services.process.step4.title')}</h3>
+              <p className="text-muted-foreground">{t('services.process.step4.desc')}</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* CTA Section */}
       <section className="section-padding bg-card">
         <div className="container-custom text-center">

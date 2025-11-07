@@ -2,6 +2,7 @@ import AccentureNav from "@/components/AccentureNav";
 import AccentureFooter from "@/components/AccentureFooter";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { Target, Users, Award, TrendingUp } from "lucide-react";
+import aboutStoryImage from "@/assets/about-story.jpg";
 
 const About = () => {
   const { t } = useLanguage();
@@ -56,11 +57,20 @@ const About = () => {
               <p className="text-lg text-muted-foreground mb-4">
                 {t('about.story.p1')}
               </p>
-              <p className="text-lg text-muted-foreground">
+              <p className="text-lg text-muted-foreground mb-4">
                 {t('about.story.p2')}
               </p>
+              <p className="text-lg text-muted-foreground">
+                {t('about.story.p3')}
+              </p>
             </div>
-            <div className="h-96 bg-gradient-to-br from-primary/20 to-accent/20 rounded-lg" />
+            <div className="h-96 rounded-lg overflow-hidden">
+              <img 
+                src={aboutStoryImage} 
+                alt="TEKFINITY team collaboration" 
+                className="w-full h-full object-cover"
+              />
+            </div>
           </div>
         </div>
       </section>

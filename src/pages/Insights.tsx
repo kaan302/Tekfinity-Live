@@ -2,6 +2,7 @@ import AccentureNav from "@/components/AccentureNav";
 import AccentureFooter from "@/components/AccentureFooter";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { ArrowRight, Clock } from "lucide-react";
+import insightsFeaturedImage from "@/assets/insights-featured.jpg";
 
 const Insights = () => {
   const { t } = useLanguage();
@@ -56,7 +57,13 @@ const Insights = () => {
         <div className="container-custom">
           <div className="bg-card border border-border rounded-lg overflow-hidden hover-lift">
             <div className="grid md:grid-cols-2">
-              <div className="h-64 md:h-auto bg-gradient-to-br from-primary/20 to-accent/20" />
+              <div className="h-64 md:h-auto overflow-hidden">
+                <img 
+                  src={insightsFeaturedImage} 
+                  alt="Future of Software Engineering" 
+                  className="w-full h-full object-cover"
+                />
+              </div>
               <div className="p-8 md:p-12">
                 <span className="text-sm text-primary font-semibold">{t('insights.featured')}</span>
                 <h2 className="text-3xl md:text-4xl font-bold mt-4 mb-6">

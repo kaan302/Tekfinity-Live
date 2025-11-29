@@ -19,12 +19,12 @@ const AccentureNav = () => {
   const location = useLocation();
 
   const navItems = [
+    { name: t('nav.startProject'), hasDropdown: false, path: '/start-project' },
     { name: t('nav.services'), hasDropdown: false, path: '/services' },
     { name: t('nav.insights'), hasDropdown: false, path: '/insights' },
     { name: t('nav.about'), hasDropdown: false, path: '/about' },
     { name: t('nav.careers'), hasDropdown: false, path: '/careers' },
     { name: t('nav.contact'), hasDropdown: false, path: '/contact' },
-    { name: t('nav.startProject'), hasDropdown: false, path: '/start-project' },
   ];
 
   return (

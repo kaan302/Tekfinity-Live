@@ -2,7 +2,7 @@ import AccentureNav from "@/components/AccentureNav";
 import AccentureFooter from "@/components/AccentureFooter";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { Target, Users, Award, TrendingUp } from "lucide-react";
-import aboutStoryImage from "@/assets/about-story.jpg";
+import technologyTeam from "@/assets/technology-team.jpg";
 
 const About = () => {
   const { t } = useLanguage();
@@ -66,7 +66,7 @@ const About = () => {
             </div>
             <div className="h-96 rounded-lg overflow-hidden">
               <img 
-                src={aboutStoryImage} 
+                src={technologyTeam} 
                 alt="TEKFINITY team collaboration" 
                 className="w-full h-full object-cover"
               />

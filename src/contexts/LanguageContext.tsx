@@ -15,6 +15,8 @@ const translations: Record<Language, Record<string, string>> = {
     'nav.insights': 'Wat we denken',
     'nav.about': 'Wie we zijn',
     'nav.careers': 'Carrières',
+    'nav.contact': 'Contact',
+    'nav.startProject': 'Start Project',
     'nav.country': 'Nederland',
     
     // Hero
@@ -309,6 +311,8 @@ const translations: Record<Language, Record<string, string>> = {
     'nav.insights': 'What we think',
     'nav.about': 'Who we are',
     'nav.careers': 'Careers',
+    'nav.contact': 'Contact',
+    'nav.startProject': 'Start Project',
     'nav.country': 'Netherlands',
     
     // Hero

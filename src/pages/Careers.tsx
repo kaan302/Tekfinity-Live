@@ -1,3 +1,4 @@
+import { useNavigate } from "react-router-dom";
 import AccentureNav from "@/components/AccentureNav";
 import AccentureFooter from "@/components/AccentureFooter";
 import { useLanguage } from "@/contexts/LanguageContext";
@@ -5,6 +6,7 @@ import { MapPin, Clock, ArrowRight } from "lucide-react";
 
 const Careers = () => {
   const { t } = useLanguage();
+  const navigate = useNavigate();
 
   const openings = [
     {
@@ -156,7 +158,10 @@ const Careers = () => {
           <p className="text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
             {t('careers.cta.desc')}
           </p>
-          <button className="bg-primary text-primary-foreground px-8 py-4 rounded-lg text-lg font-semibold hover:bg-primary/90 transition-colors">
+          <button 
+            onClick={() => navigate('/contact')}
+            className="bg-primary text-primary-foreground px-8 py-4 rounded-lg text-lg font-semibold hover:bg-primary/90 transition-colors"
+          >
             {t('careers.cta.button')}
           </button>
         </div>

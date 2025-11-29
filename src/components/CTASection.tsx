@@ -1,9 +1,11 @@
 import { ArrowRight, Mail } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { useLanguage } from "@/contexts/LanguageContext";
 
 const CTASection = () => {
   const { t } = useLanguage();
+  const navigate = useNavigate();
   
   return (
     <section className="py-32 relative overflow-hidden">
@@ -33,6 +35,7 @@ const CTASection = () => {
             <Button
               size="lg"
               className="group bg-primary hover:bg-primary/90 text-lg px-8 py-6 glow-effect"
+              onClick={() => navigate('/start-project')}
             >
               {t('cta.start')}
               <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
@@ -41,6 +44,7 @@ const CTASection = () => {
               size="lg"
               variant="outline"
               className="text-lg px-8 py-6 border-2 hover:bg-card"
+              onClick={() => navigate('/contact')}
             >
               <Mail className="mr-2 h-5 w-5" />
               {t('cta.contact')}

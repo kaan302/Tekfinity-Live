@@ -1,4 +1,5 @@
 
+import { Link } from "react-router-dom";
 import logoWhite from "@/assets/logo-white.png";
 import { useLanguage } from "@/contexts/LanguageContext";
 
@@ -8,19 +9,35 @@ const AccentureFooter = () => {
   const footerSections = [
     {
       title: t('footer.about'),
-      links: [t('footer.aboutUs'), t('footer.leadership'), t('footer.careers'), t('footer.newsroom'), t('footer.investor')],
+      links: [
+        { label: t('footer.aboutUs'), href: '/about' },
+        { label: t('footer.careers'), href: '/careers' },
+        { label: t('footer.contactUs'), href: '/contact' },
+      ],
     },
     {
       title: t('footer.services'),
-      links: [t('footer.strategy'), t('footer.technology'), t('footer.operations'), t('footer.industry')],
+      links: [
+        { label: t('footer.strategy'), href: '/services' },
+        { label: t('footer.technology'), href: '/services' },
+        { label: t('footer.operations'), href: '/services' },
+      ],
     },
     {
       title: t('footer.insights'),
-      links: [t('footer.research'), t('footer.caseStudies'), t('footer.blogs'), t('footer.podcasts')],
+      links: [
+        { label: t('footer.research'), href: '/insights' },
+        { label: t('footer.caseStudies'), href: '/insights' },
+        { label: t('footer.blogs'), href: '/insights' },
+      ],
     },
     {
       title: t('footer.resources'),
-      links: [t('footer.clients'), t('footer.partners'), t('footer.suppliers'), t('footer.contactUs')],
+      links: [
+        { label: t('footer.clients'), href: '/about' },
+        { label: t('footer.partners'), href: '/about' },
+        { label: t('cta.start'), href: '/start-project' },
+      ],
     },
   ];
 
@@ -35,12 +52,12 @@ const AccentureFooter = () => {
               <ul className="space-y-3">
                 {section.links.map((link, linkIndex) => (
                   <li key={linkIndex}>
-                    <a
-                      href="#"
+                    <Link
+                      to={link.href}
                       className="text-muted-foreground hover:text-primary transition-colors text-sm"
                     >
-                      {link}
-                    </a>
+                      {link.label}
+                    </Link>
                   </li>
                 ))}
               </ul>

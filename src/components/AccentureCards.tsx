@@ -1,9 +1,9 @@
 import { Badge } from "@/components/ui/badge";
 import { Card } from "@/components/ui/card";
-import card1 from "@/assets/card-1.jpg";
-import card2 from "@/assets/card-2.jpg";
-import card3 from "@/assets/card-3.jpg";
-import card4 from "@/assets/card-4.jpg";
+import teamCollaboration from "@/assets/team-collaboration.jpg";
+import officeWorkspace from "@/assets/office-workspace.jpg";
+import businessMeeting from "@/assets/business-meeting.jpg";
+import aiTechnology from "@/assets/ai-technology.jpg";
 import { useLanguage } from "@/contexts/LanguageContext";
 
 const AccentureCards = () => {
@@ -14,28 +14,28 @@ const AccentureCards = () => {
       type: t('cards.report'),
       title: t('cards.card1.title'),
       description: t('cards.card1.desc'),
-      image: card1,
+      image: teamCollaboration,
       gradient: "from-orange-200/20 to-pink-200/20",
     },
     {
       type: t('cards.report'),
       title: t('cards.card2.title'),
       description: t('cards.card2.desc'),
-      image: card2,
+      image: officeWorkspace,
       gradient: "from-blue-200/20 to-purple-200/20",
     },
     {
       type: t('cards.case'),
       title: t('cards.card3.title'),
       description: t('cards.card3.desc'),
-      image: card3,
+      image: businessMeeting,
       gradient: "from-purple-200/20 to-indigo-200/20",
     },
     {
       type: t('cards.report'),
       title: t('cards.card4.title'),
       description: t('cards.card4.desc'),
-      image: card4,
+      image: aiTechnology,
       gradient: "from-pink-200/20 to-purple-200/20",
     },
   ];

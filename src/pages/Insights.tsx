@@ -2,7 +2,7 @@ import AccentureNav from "@/components/AccentureNav";
 import AccentureFooter from "@/components/AccentureFooter";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { ArrowRight, Clock } from "lucide-react";
-import insightsFeaturedImage from "@/assets/insights-featured.jpg";
+import cloudInfrastructure from "@/assets/cloud-infrastructure.jpg";
 import { useNavigate } from "react-router-dom";
 
 const Insights = () => {
@@ -65,7 +65,7 @@ const Insights = () => {
             <div className="grid md:grid-cols-2">
               <div className="h-64 md:h-auto overflow-hidden">
                 <img 
-                  src={insightsFeaturedImage} 
+                  src={cloudInfrastructure} 
                   alt="Future of Software Engineering" 
                   className="w-full h-full object-cover"
                 />

@@ -28,7 +28,11 @@ const handler = async (req: Request): Promise<Response> => {
 
   try {
     const data: ContactEmailRequest = await req.json();
-    console.log("Received contact form submission:", { name: data.name, email: data.email, type: data.type });
+    console.log("Received contact form submission:", { 
+      name: data.name, 
+      email: data.email, 
+      type: data.type 
+    });
 
     let htmlContent = "";
     let subjectLine = "";

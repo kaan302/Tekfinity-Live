@@ -68,7 +68,7 @@ const handler = async (req: Request): Promise<Response> => {
         Authorization: `Bearer ${RESEND_API_KEY}`,
       },
       body: JSON.stringify({
-        from: "Tekfinity <onboarding@resend.dev>",
+        from: "Tekfinity <noreply@tekfinity.nl>",
         to: ["info@tekfinity.nl"],
         subject: subjectLine,
         html: htmlContent,

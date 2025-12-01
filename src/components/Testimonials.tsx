@@ -7,8 +7,8 @@ const Testimonials = () => {
   
   const testimonials = [
     {
-      name: "Raihan Saboerali",
-      role: "Cartura",
+      name: "Abdul Rihan",
+      role: "Find My Tutor",
       content: t('testimonials.test1.content'),
       rating: 5,
     },
